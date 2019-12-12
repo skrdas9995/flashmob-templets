@@ -15,7 +15,12 @@
     <link href="assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/emoji.css" rel="stylesheet">
+    <link href="assets/css/button.css" rel="stylesheet">
+    <link href="assets/css/image_upload.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://onesignal.github.io/emoji-picker/lib/css/emoji.css'><link rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,12 +33,12 @@
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+<!--     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
-    </div>
+    </div> -->
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -211,12 +216,12 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
+               <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"><a href="#" onclick="dashboard_show()" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item""><a href="#" onclick="createpost_show()" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Create Post</span></a></li>
-                        <li class="sidebar-item"><a onclick="dashboard_show()" class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Schedule Post</span></a></li>
-                        <li class="sidebar-item"><a onclick="dashboard_show()" class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Insights</span></a></li>
+                        <li class="sidebar-item side_item_color"  id="remove_dashboard"><a href="#" onclick="dashboard_show()" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item " id="remove_createpost"><a href="#" onclick="createpost_show()" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false"><i class="fab fa-telegram-plane"></i><span class="hide-menu">Create Post</span></a></li>
+                        <li class="sidebar-item " id="remove_schudulepost"><a onclick="schudulepost_show()" class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Schedule Post</span></a></li>
+                        <li class="sidebar-item " id="remove_insights"><a onclick="insights_show()" class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Insights</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -229,7 +234,7 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div id="dash_board" class="div_disable div_enable">
+        <div id="dash_board" class="">
           <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -326,69 +331,309 @@
     <!-- start create post-->
      <div id="create_post" class="div_disable div_enable">
          <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-             <div class="page-breadcrumb">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Create Post</h4>
-                        <div class="ml-auto text-right">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
-                                </ol>
-                            </nav>
+                    <div class="col-lg-7 col-md-7 col-sm-7">
+                       <div class="card">
+                          <div class="card-header">
+                            <div class="row">
+                              <h4 class="page-title">Create Post</h4>
+                              <!-- <h4 class="page-title float-right">Contact</h4> -->
+                            </div>
+                          </div>
+                          <div class="card-body">
+                              <div class="dropdown">
+                                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Connected Social Media...
+                                 </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="facebook">
+                                         <label class="custom-control-label" for="facebook">Facebook</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="Instagram">
+                                         <label class="custom-control-label" for="Instagram">Instagram</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="youtube">
+                                         <label class="custom-control-label" for="youtube">You Tube</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="Twitter">
+                                         <label class="custom-control-label" for="Twitter">Twitter</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="Pinterest">
+                                         <label class="custom-control-label" for="Pinterest">Pinterest</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="googleplus">
+                                         <label class="custom-control-label" for="googleplus">Google +</label>
+                                       </div>
+                                   </a>
+                                 </div>
+                               </div>
+                            <div class="form-group shadow-textarea">
+                              <i class="fa fa-file-text" aria-hidden="true"></i><label for="exampleFormControlTextarea6">Text</label>
+                              <p class="lead emoji-picker-container">
+                                <textarea id="exampleFormControlTextarea6" rows="3" type="textbox" data-emoji-input="unicode" class="form-control z-depth-1" placeholder="Write something here..." data-emojiable="true" style=""></textarea>
+                            </p>
+                            </div>
+                            <div>
+                              <i class="fa fa-file-image-o" aria-hidden="true" style="padding-right: 5px;"></i><label for="exampleFormControlTextarea6">Media</label>
+                           </div>
+                               <div class="card">
+                                  <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                       <div class="card-body" style="border-style: dashed;border-width: thin;    border-color: #94b6d4; padding:0rem;">
+                                           <div class="file-upload">
+                                              <div class="image-upload-wrap">
+                                                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                                <div class="drag-text">
+                                                   <i class="fa fa-upload" aria-hidden="f"></i>
+                                                   <br>Drag and drop a file or select add Image.
+                                                </div>
+                                              </div>
+                                              <div class="file-upload-content">
+                                                <img class="file-upload-image" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                  <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                       <div class="card-body" style="border-style: dashed;border-width: thin;border-color: #94b6d4; padding:0rem;">
+                                           <div class="file-upload">
+                                              <div class="image-upload-wrap">
+                                                <input class="file-upload-input" type='file' onchange="readURLvideo(this);" accept="video/*" />
+                                                <div class="drag-text">
+                                                   <i class="fa fa-upload" aria-hidden="true"></i>
+                                                   <br>Drag and drop a file or select add Video.
+                                                </div>
+                                              </div>
+                                              <div class="file-upload-content">
+                                                <video class="file-upload-image" src="#" alt="your video" />
+                                                <div class="image-title-wrap">
+                                                  <button type="button" onclick="removeUploadvideo()" class="remove-image">Remove <span class="image-title">Uploaded Video</span></button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            <div class="float-right"><span class="po"><a href="#schedule_post_modal" data-toggle="modal" class="btn btn-light po1">Schedule Post</a></span><span class="po"><a href="#" class="btn btn-light po1">Post</a></span><span class="po"><a href="#" class="btn btn-light po1" id="show">Preview</a></span></div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5">
+                        <div class="card show" style="display:none;">
+                            <div class="card-header"><h4 class="page-title">Preview Post</h4></div>
+                            <div class="card-body">Content</div> 
+                            <div class="card-footer">Footer</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+    </div>
+    </div>
+    <div id="schudule_post" class="div_disable div_enable">
+        <div class="page-wrapper">
             <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Sales Cards  -->
-                <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                      <i class="fa fa-facebook-official social_disign" style="font-size:25px;color:blue"></i>
-                      <i class="fa fa-instagram social_disign" style="font-size:25px;color:red"></i>
-                      <i class="fa fa-linkedin-square social_disign" style="font-size:25px;color:red"></i>
-                      <i class="fa fa-google-plus-square social_disign" style="font-size:25px;color:red"></i>
-                      <i class="fa fa-youtube-play social_disign" style="font-size:25px;color:red"></i>
-                      <i class="fa fa-pinterest-square social_disign" style="font-size:25px;color:red"></i>
-                      <i class="fa fa-twitter-square social_disign" style="font-size:25px;color:skyblue"></i>
-                      <i class="fa fa-linkedin-square social_disign" style="font-size:25px;color:red"></i>
-                   </div>
-                </div>
-                <div class="row ckedit_align">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <div id="editor">Type Your Text Here...</div>
-                   </div>
-                </div>
-                <div class="row">
-                    
+                        <div class="card">
+                          <div class="card-header">
+                            <h4 class="page-title">Scheduled Post</h4>
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Text To Be Post</h5>
+                               <!-- view text -->
+                                <div class="alert alert-secondary" role="alert">
+                                  <h4 class="alert-heading">Well done!</h4>
+                                  <p>These are the text coming from database that are schedule for the post in the below date,you may can change it as per your requirement....</p>
+                                </div>
+                                <h5 class="card-title">Media</h5>
+                                   <div class="row">
+                                       <div class="col-lg-6 col-md-6 col-sm-6">
+                                           <img src="assets/images/facebook.jpg" width="100" height="100">
+                                       </div>
+                                       <div class="col-lg-6 col-md-6 col-sm-6">
+                                           <video width="100" height="100" controls>
+                                              <source src="movie.mp4" type="video/mp4">
+                                            </video>
+                                       </div>
+                                   </div>
+                                   <div class="row" style="float: right;margin-top: 20px;">
+                                        <div class="float-right">
+                                          <span>Date: 20/12/2020 </span> <span>Time: 6.55.32 AM</span> 
+                                        </div>                                       
+                                   </div>
+                                   <div class="row" style="float: right;margin-top: 60px; margin-right: -200px;">
+                                        <div class="float-right">
+                                          <button type="button" class="btn btn-danger">Delete</button>
+                                          <button type="button" class="btn btn-primary" id="edit_schedule_post">Edit</button> 
+                                        </div>                                       
+                                   </div>
+                               </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 edit_schedule_post" id="" style="display: none;">
+                         <div class="card">
+                          <div class="card-header">
+                            <div class="row">
+                              <h4 class="page-title">Create Post</h4>
+                              <!-- <h4 class="page-title float-right">Contact</h4> -->
+                            </div>
+                          </div>
+                          <div class="card-body">
+                              <div class="dropdown">
+                                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Connected Social Media...
+                                 </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="facebook">
+                                         <label class="custom-control-label" for="facebook">Facebook</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="Instagram">
+                                         <label class="custom-control-label" for="Instagram">Instagram</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="youtube">
+                                         <label class="custom-control-label" for="youtube">You Tube</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="Twitter">
+                                         <label class="custom-control-label" for="Twitter">Twitter</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="Pinterest">
+                                         <label class="custom-control-label" for="Pinterest">Pinterest</label>
+                                       </div>
+                                   </a>
+                                   <a class="dropdown-item" href="#">
+                                       <div class="custom-control custom-checkbox">
+                                         <input type="checkbox" class="custom-control-input" id="googleplus">
+                                         <label class="custom-control-label" for="googleplus">Google +</label>
+                                       </div>
+                                   </a>
+                                 </div>
+                               </div>
+                            <div class="form-group shadow-textarea">
+                              <i class="fa fa-file-text" aria-hidden="true"></i><label for="exampleFormControlTextarea6">Text</label>
+                              <p class="lead emoji-picker-container">
+                                <textarea id="exampleFormControlTextarea6" rows="3" type="textbox" data-emoji-input="unicode" class="form-control z-depth-1" placeholder="Write something here..." data-emojiable="true" style=""></textarea>
+                            </p>
+                            </div>
+                            <div>
+                              <i class="fa fa-file-image-o" aria-hidden="true" style="padding-right: 5px;"></i><label for="exampleFormControlTextarea6">Media</label>
+                           </div>
+                               <div class="card">
+                                  <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                       <div class="card-body" style="border-style: dashed;border-width: thin;    border-color: #94b6d4; padding:0rem;">
+                                           <div class="file-upload">
+                                              <div class="image-upload-wrap">
+                                                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                                <div class="drag-text">
+                                                   <i class="fa fa-upload" aria-hidden="f"></i>
+                                                   <br>Drag and drop a file or select add Image.
+                                                </div>
+                                              </div>
+                                              <div class="file-upload-content">
+                                                <img class="file-upload-image" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                  <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                       <div class="card-body" style="border-style: dashed;border-width: thin;border-color: #94b6d4; padding:0rem;">
+                                           <div class="file-upload">
+                                              <div class="image-upload-wrap">
+                                                <input class="file-upload-input" type='file' onchange="readURLvideo(this);" accept="video/*" />
+                                                <div class="drag-text">
+                                                   <i class="fa fa-upload" aria-hidden="true"></i>
+                                                   <br>Drag and drop a file or select add Video.
+                                                </div>
+                                              </div>
+                                              <div class="file-upload-content">
+                                                <video class="file-upload-image" src="#" alt="your video" />
+                                                <div class="image-title-wrap">
+                                                  <button type="button" onclick="removeUploadvideo()" class="remove-image">Remove <span class="image-title">Uploaded Video</span></button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            <div class="float-right"><span class="po"><a href="#" class="btn btn-light po1">Save</a></span></div>
+                          </div>
+                       </div>
+                        </div>
+                    </div>
+
+                    </div>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+        </div>
+  </div>
+<div id="insights_post" class="div_disable div_enable">
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                    <div class="card">
+                      <div class="card-header">
+                        Featured insights_post
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+<footer class="footer text-center">
+     All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+</footer>
         <!-- end create post -->
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-    </div>
+
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -418,7 +663,13 @@
     <script src="assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="assets/js/pages/chart/chart-page-init.js"></script>
-
+    <script src="assets/js/emoji.js"></script>
+    <script src="assets/js/emoji1.js"></script>
+    <script src="assets/js/emoji2.js"></script>
+    <script src="assets/js/emoji3.js"></script>
+    <script src="assets/js/image_upload.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js'></script>
 </body>
 
 </html>
@@ -429,16 +680,206 @@ function createpost_show() {
    element.classList.remove("div_disable");
   var element = document.getElementById("dash_board");
     element.classList.add("div_disable");
+ var element = document.getElementById("schudule_post");
+    element.classList.add("div_disable");
+ var element = document.getElementById("insights_post");
+    element.classList.add("div_disable");
+ var element = document.getElementById("remove_dashboard");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_schudulepost");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_insights");
+    element.classList.remove("side_item_color");
+  var element = document.getElementById("remove_createpost");
+    element.classList.add("side_item_color");
+
+
 }
 function dashboard_show() {
   var element = document.getElementById("dash_board");
   element.classList.remove("div_disable");
   var element = document.getElementById("create_post");
     element.classList.add("div_disable");
+ var element = document.getElementById("schudule_post");
+    element.classList.add("div_disable");
+ var element = document.getElementById("insights_post");
+    element.classList.add("div_disable");
+ var element = document.getElementById("remove_createpost");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_schudulepost");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_insights");
+    element.classList.remove("side_item_color");
+var element = document.getElementById("remove_dashboard");
+    element.classList.add("side_item_color");
+}
+function schudulepost_show() {
+  var element = document.getElementById("schudule_post");
+  element.classList.remove("div_disable");
+  var element = document.getElementById("create_post");
+    element.classList.add("div_disable");
+  var element = document.getElementById("dash_board");
+    element.classList.add("div_disable");
+  var element = document.getElementById("insights_post");
+    element.classList.add("div_disable");
+  var element = document.getElementById("remove_createpost");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_dashboard");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_insights");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_schudulepost");
+    element.classList.add("side_item_color");
+}
+function insights_show() {
+  var element = document.getElementById("insights_post");
+  element.classList.remove("div_disable");
+  var element = document.getElementById("create_post");
+    element.classList.add("div_disable");
+  var element = document.getElementById("dash_board");
+    element.classList.add("div_disable");
+  var element = document.getElementById("schudule_post");
+    element.classList.add("div_disable");
+var element = document.getElementById("remove_createpost");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_dashboard");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_schudulepost");
+    element.classList.remove("side_item_color");
+ var element = document.getElementById("remove_insights");
+    element.classList.add("side_item_color");
 }
 </script>
 <style type="text/css">
     .div_disable{
         display: none;
     }
+</style>
+ <style type="text/css">
+     .social_disign{
+        padding: 3px;
+     }
+    .ckedit_align{
+     margin-top: 35px;
+    }
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+.shadow-textarea
+{
+    margin-top: 10px;
+}
+ </style>          
+<style type="text/css">
+    .full-width {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.full-width .justify-content-center {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+.full-width .lead.emoji-picker-container {
+  width: 300px;
+  display: block;
+}
+.full-width .lead.emoji-picker-container input {
+  width: 100%;
+  height: 50px;
+}
+.emoji-picker-icon {
+    margin-top: 65px;
+}
+.emoji-wysiwyg-editor {
+    height: 100px;
+}
+
+
+</style>
+<script>
+$(document).ready(function(){
+  $("#show").click(function(){
+    $(".show").show();
+  });
+});
+</script>
+<div class="modal fade" id="schedule_post_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Set Date And Time To Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                  <label>Date</label>
+                  <div class="input-group date" id="datepicker">
+                    <input class="form-control" placeholder="MM/DD/YYYY"/><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-calendar"></i></span></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Time</label>
+                  <div class="input-group time" id="timepicker">
+                    <input class="form-control" placeholder="HH:MM AM/PM"/><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock"></i></span></span>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary po1">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+<script type="text/javascript">
+    if (/Mobi/.test(navigator.userAgent)) {
+  // if mobile device, use native pickers
+  $(".date input").attr("type", "date");
+  $(".time input").attr("type", "time");
+} else {
+  // if desktop device, use DateTimePicker
+  $("#datepicker").datetimepicker({
+    useCurrent: false,
+    format: "L",
+    showTodayButton: true,
+    icons: {
+      next: "fa fa-chevron-right",
+      previous: "fa fa-chevron-left",
+      today: 'todayText',
+    }
+  });
+  $("#timepicker").datetimepicker({
+    format: "LT",
+    icons: {
+      up: "fa fa-chevron-up",
+      down: "fa fa-chevron-down"
+    }
+  });
+}
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#edit_schedule_post").click(function(){
+    $(".edit_schedule_post").show();
+  });
+});
+</script>
+
+<style type="text/css">
+    #schedule_post_modal .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+    margin: 0 auto;
+}
 </style>
