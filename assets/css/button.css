@@ -1,6 +1,9 @@
 span.po {
     padding-right: 5px;
 }
+.but{
+  margin-top: 20px;
+}
 .po1{
 	background-color: #F17129;
     border-color: #f1712a;
@@ -152,4 +155,61 @@ span.po {
 
 .todayText:before {
   content: "Today's Date";
+}
+/*list*/
+    .div_disable{
+        display: none;
+    }
+    /**/
+        .social_disign{
+        padding: 3px;
+     }
+    .ckedit_align{
+     margin-top: 35px;
+    }
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+.shadow-textarea
+{
+    margin-top: 10px;
+}
+/*emoji*/
+.full-width {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.full-width .justify-content-center {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+.full-width .lead.emoji-picker-container {
+  width: 300px;
+  display: block;
+}
+.full-width .lead.emoji-picker-container input {
+  width: 100%;
+  height: 50px;
+}
+.emoji-picker-icon {
+    margin-top: 65px;
+}
+.emoji-wysiwyg-editor {
+    height: 100px;
+}
+.social-img{
+  height: 275px;
+}
+
+  #schedule_post_modal .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+    margin: 0 auto;
 }

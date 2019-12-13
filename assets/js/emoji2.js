@@ -569,12 +569,12 @@
         .appendTo(this.$menu);
     this.$categoryTabs = $(
         '<table class="emoji-menu-tabs"><tr>'
-            + '<td><a class="emoji-menu-tab icon-recent" ></a></td>'
-            + '<td><a class="emoji-menu-tab icon-smile" ></a></td>'
-            + '<td><a class="emoji-menu-tab icon-flower"></a></td>'
-            + '<td><a class="emoji-menu-tab icon-bell"></a></td>'
-            + '<td><a class="emoji-menu-tab icon-car"></a></td>'
-            + '<td><a class="emoji-menu-tab icon-grid"></a></td>'
+            + '<td><a class="emoji-menu-tab icon-recent" style="background-image:url(assets/images/IconsetSmiles_1x.png)"></a></td>'
+            + '<td><a class="emoji-menu-tab icon-smile" style="background-image:url(assets/images/IconsetSmiles_1x.png)"></a></td>'
+            + '<td><a class="emoji-menu-tab icon-flower" style="background-image:url(assets/images/IconsetSmiles_1x.png)"></a></td>'
+            + '<td><a class="emoji-menu-tab icon-bell" style="background-image:url(assets/images/IconsetSmiles_1x.png)"></a></td>'
+            + '<td><a class="emoji-menu-tab icon-car" style="background-image:url(assets/images/IconsetSmiles_1x.png)"></a></td>'
+            + '<td><a class="emoji-menu-tab icon-grid" style="background-image:url(assets/images/IconsetSmiles_1x.png)"></a></td>'
             + '</tr></table>').appendTo(this.$itemsTailWrap);
     this.$itemsWrap = $(
         '<div class="emoji-items-wrap mobile_scrollable_wrap"></div>')
